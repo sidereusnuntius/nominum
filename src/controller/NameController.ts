@@ -14,7 +14,11 @@ export class NameController {
 		console.log(this.nameRepository);
 		return async (req: Request, res: Response, next: NextFunction) => {
 			try {
-				const names = await this.nameRepository.find();
+				const names = await this.nameRepository.find({
+					order: {
+						id: "desc",
+					},
+				});
 				res.send(JSON.stringify(names))
 			} catch (e) {
 				next(e);

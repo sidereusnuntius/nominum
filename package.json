@@ -9,11 +9,12 @@
       "typescript": "^5.8.2"
    },
    "dependencies": {
-      "reflect-metadata": "^0.2.2",
-      "typeorm": "0.3.27",
-      "pg": "^8.14.1",
+      "body-parser": "^1.20.3",
+      "cors": "^2.8.5",
       "express": "^4.21.2",
-      "body-parser": "^1.20.3"
+      "pg": "^8.14.1",
+      "reflect-metadata": "^0.2.2",
+      "typeorm": "0.3.27"
    },
    "scripts": {
       "start": "ts-node src/index.ts",
