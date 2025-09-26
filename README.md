@@ -1,7 +1,7 @@
-# Awesome Project Build with TypeORM
+# Instruções de execução
 
-Steps to run this project:
-
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+Variáveis de ambiente para o banco de dados:
+- HOSTNAME
+- USERNAME
+- PASSWORD
+- DATABASE
