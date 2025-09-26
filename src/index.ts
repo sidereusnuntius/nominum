@@ -1,6 +1,5 @@
 import { AppDataSource } from "./data-source"
 import { Name } from "./entity/Name";
-import { Routes } from "./routes"
 import createApp from "./app";
 
 AppDataSource.initialize().then(async () => {
