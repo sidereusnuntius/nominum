@@ -32,11 +32,12 @@ export class NameController {
 				next(new Error("invalid name"));
 				return;
 			}
+			const name = req.body;
 
 			try {
-				await this.nameRepository.save(req.body);
+				await this.nameRepository.save(name);
 				res.status(201);
-				res.send();
+				res.send(name);
 			} catch (e) {
 				next(e);
 			}
