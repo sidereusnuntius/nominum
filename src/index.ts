@@ -1,7 +1,9 @@
 import * as express from "express"
 import * as bodyParser from "body-parser"
-import { Request, Response } from "express"
+import { Request, Response, json } from "express"
 import { AppDataSource } from "./data-source"
+import { Name } from "./entity/Name";
+import { NameController } from "./controller/NameController";
 import { Routes } from "./routes"
 
 AppDataSource.initialize().then(async () => {
@@ -10,10 +12,13 @@ AppDataSource.initialize().then(async () => {
     const app = express()
     app.use(bodyParser.json())
 
-    // setup express app here
-    // ...
+    const repo = AppDataSource.getRepository(Name);
+    console.log(await repo.find());
+    const controller = new NameController(repo);
 
-    // start express server
+    app.get("/names", controller.getNames());
+    app.post("/names", controller.insertName());
+
     app.listen(3000)
 
     // insert new users for test
